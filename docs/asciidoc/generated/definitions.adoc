@@ -1,0 +1,509 @@
+
+[[_definitions]]
+== 定义
+
+[[_commonbo]]
+=== CommonBo
+通用业务实体
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**deviceId** +
+__必填__|设备id +
+**样例** : `"设备id"`|integer (int32)
+|**projectId** +
+__必填__|项目id +
+**样例** : `"项目id"`|integer (int32)
+|===
+
+
+[[_distribubtionboxlivedatavo]]
+=== DistribubtionBoxLiveDataVo
+实时数据
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**currentOfPhaseA** +
+__可选__|A相电流(A) +
+**样例** : `"A相电流(A)"`|number (float)
+|**currentOfPhaseB** +
+__可选__|B相电流(A) +
+**样例** : `"B相电流(A)"`|number (float)
+|**currentOfPhaseC** +
+__可选__|C相电流(A) +
+**样例** : `"C相电流(A)"`|number (float)
+|**currentOfRemain** +
+__可选__|剩余电流(mA) +
+**样例** : `"剩余电流(mA)"`|number (float)
+|**liveDate** +
+__可选__|数据时间 +
+**样例** : `"数据时间"`|string (date-time)
+|**temperatureOfBox** +
+__可选__|箱体温度(℃) +
+**样例** : `"箱体温度(℃)"`|number (float)
+|**temperatureOfPhaseA** +
+__可选__|A相温度(℃) +
+**样例** : `"A相温度(℃)"`|number (float)
+|**temperatureOfPhaseB** +
+__可选__|B相温度(℃) +
+**样例** : `"B相温度(℃)"`|number (float)
+|**temperatureOfPhaseC** +
+__可选__|C相温度(℃) +
+**样例** : `"C相温度(℃)"`|number (float)
+|===
+
+
+[[_distributionboxvo]]
+=== DistributionBoxVo
+配电箱设备详情
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**atsp** +
+__可选__|**样例** : `0.0`|number (float)
+|**avalue** +
+__可选__|**样例** : `0.0`|number (float)
+|**boxTsp** +
+__可选__|电流温度阀值 +
+**样例** : `"电流温度阀值"`|number (float)
+|**deviceArea** +
+__可选__|设备区域 +
+**样例** : `"设备区域"`|string
+|**deviceStatus** +
+__可选__|设备状态 0 正常 1 报警' +
+**样例** : `"设备状态 0 正常 1 报警'"`|string
+|**id** +
+__可选__|主键 +
+**样例** : `"主键"`|integer (int32)
+|**insertTime** +
+__可选__|插入时间 +
+**样例** : `"插入时间"`|string (date-time)
+|**monitorId** +
+__可选__|监测器编号 +
+**样例** : `"监测器编号"`|string
+|**pdxId** +
+__可选__|配电箱编号 +
+**样例** : `"配电箱编号"`|string
+|**pdxName** +
+__可选__|配电箱名称 +
+**样例** : `"配电箱名称"`|string
+|**projectId** +
+__可选__|项目id +
+**样例** : `"项目id"`|string
+|**residualAValue** +
+__可选__|剩余电流阀值 +
+**样例** : `"剩余电流阀值"`|number (float)
+|**updateTime** +
+__可选__|修改时间 +
+**样例** : `"修改时间"`|string (date-time)
+|**vendorCode** +
+__可选__|厂商 +
+**样例** : `"厂商"`|string
+|===
+
+
+[[_electricitymetervo]]
+=== ElectricityMeterVo
+电表
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**ct** +
+__可选__|**样例** : `0.0`|number (float)
+|**deviceSn** +
+__可选__|设备编号 +
+**样例** : `"设备编号"`|string
+|**isMaster** +
+__可选__|是否主表 0 不是 1 是 +
+**样例** : `"是否主表 0 不是 1 是"`|integer (int32)
+|**pt** +
+__可选__|**样例** : `0.0`|number (float)
+|===
+
+
+[[_modelandview]]
+=== ModelAndView
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**empty** +
+__可选__|**样例** : `true`|boolean
+|**model** +
+__可选__|**样例** : `"object"`|object
+|**modelMap** +
+__可选__|**样例** : `{
+  "string" : "object"
+}`|< string, object > map
+|**reference** +
+__可选__|**样例** : `true`|boolean
+|**status** +
+__可选__|**样例** : `"string"`|enum (100 CONTINUE, 101 SWITCHING_PROTOCOLS, 102 PROCESSING, 103 CHECKPOINT, 200 OK, 201 CREATED, 202 ACCEPTED, 203 NON_AUTHORITATIVE_INFORMATION, 204 NO_CONTENT, 205 RESET_CONTENT, 206 PARTIAL_CONTENT, 207 MULTI_STATUS, 208 ALREADY_REPORTED, 226 IM_USED, 300 MULTIPLE_CHOICES, 301 MOVED_PERMANENTLY, 302 FOUND, 302 MOVED_TEMPORARILY, 303 SEE_OTHER, 304 NOT_MODIFIED, 305 USE_PROXY, 307 TEMPORARY_REDIRECT, 308 PERMANENT_REDIRECT, 400 BAD_REQUEST, 401 UNAUTHORIZED, 402 PAYMENT_REQUIRED, 403 FORBIDDEN, 404 NOT_FOUND, 405 METHOD_NOT_ALLOWED, 406 NOT_ACCEPTABLE, 407 PROXY_AUTHENTICATION_REQUIRED, 408 REQUEST_TIMEOUT, 409 CONFLICT, 410 GONE, 411 LENGTH_REQUIRED, 412 PRECONDITION_FAILED, 413 PAYLOAD_TOO_LARGE, 413 REQUEST_ENTITY_TOO_LARGE, 414 URI_TOO_LONG, 414 REQUEST_URI_TOO_LONG, 415 UNSUPPORTED_MEDIA_TYPE, 416 REQUESTED_RANGE_NOT_SATISFIABLE, 417 EXPECTATION_FAILED, 418 I_AM_A_TEAPOT, 419 INSUFFICIENT_SPACE_ON_RESOURCE, 420 METHOD_FAILURE, 421 DESTINATION_LOCKED, 422 UNPROCESSABLE_ENTITY, 423 LOCKED, 424 FAILED_DEPENDENCY, 425 TOO_EARLY, 426 UPGRADE_REQUIRED, 428 PRECONDITION_REQUIRED, 429 TOO_MANY_REQUESTS, 431 REQUEST_HEADER_FIELDS_TOO_LARGE, 451 UNAVAILABLE_FOR_LEGAL_REASONS, 500 INTERNAL_SERVER_ERROR, 501 NOT_IMPLEMENTED, 502 BAD_GATEWAY, 503 SERVICE_UNAVAILABLE, 504 GATEWAY_TIMEOUT, 505 HTTP_VERSION_NOT_SUPPORTED, 506 VARIANT_ALSO_NEGOTIATES, 507 INSUFFICIENT_STORAGE, 508 LOOP_DETECTED, 509 BANDWIDTH_LIMIT_EXCEEDED, 510 NOT_EXTENDED, 511 NETWORK_AUTHENTICATION_REQUIRED)
+|**view** +
+__可选__|**样例** : `"<<_view>>"`|<<_view,View>>
+|**viewName** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_rundatabo]]
+=== RunDataBo
+运行数据业务
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**deviceIds** +
+__必填__|设备id数组 +
+**样例** : `"设备id数组"`|< integer (int32) > array
+|**endTime** +
+__必填__|结束时间 +
+**样例** : `"结束时间"`|string (date-time)
+|**granularity** +
+__可选__|数据粒度 0 无 1 年 2 月 3 日 4 时 5 15分钟 6 分钟 7秒 +
+**样例** : `"数据粒度 0 无 1 年 2 月 3 日 4 时 5 15分钟 6 分钟 7秒"`|string
+|**startTime** +
+__必填__|开始时间 +
+**样例** : `"开始时间"`|string (date-time)
+|===
+
+
+[[_statisticscontainmoretotalvobytime]]
+=== StatisticsContainMoreTotalVoByTime
+统计时间维度表记信息
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**statisticsDataByDevice** +
+__可选__|按设备统计数据 +
+**样例** : `"<<_statisticsdatabydevice>>"`|<<_statisticsdatabydevice,StatisticsDataByDevice>>
+|**total** +
+__可选__|总数值 +
+**样例** : `"总数值"`|number (float)
+|===
+
+
+[[_statisticscontainmorevobydevice]]
+=== StatisticsContainMoreVoByDevice
+统计设备维度表记信息
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**statisticsDataByTime** +
+__可选__|按时间统计数据 +
+**样例** : `"<<_statisticsdatabytime>>"`|<<_statisticsdatabytime,StatisticsDataByTime>>
+|**total** +
+__可选__|总数值 +
+**样例** : `"总数值"`|number (float)
+|===
+
+
+[[_statisticsdatabydevice]]
+=== StatisticsDataByDevice
+按设备统计数据
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**dataTime** +
+__可选__|时间 +
+**样例** : `"时间"`|string (date-time)
+|**deviceId** +
+__可选__|设备id +
+**样例** : `"设备id"`|string
+|**deviceName** +
+__可选__|设备名称 +
+**样例** : `"设备名称"`|string
+|**quantity** +
+__可选__|读数 +
+**样例** : `"读数"`|number (float)
+|**xname** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_statisticsdatabytime]]
+=== StatisticsDataByTime
+按时间统计数据
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**dataTime** +
+__可选__|时间 +
+**样例** : `"时间"`|string (date-time)
+|**endQuantity** +
+__可选__|读数止码 +
+**样例** : `"读数止码"`|number (float)
+|**pt** +
+__可选__|**样例** : `0.0`|number (float)
+|**quantity** +
+__可选__|读数 +
+**样例** : `"读数"`|number (float)
+|**startQuantity** +
+__可选__|读数起码 +
+**样例** : `"读数起码"`|number (float)
+|===
+
+
+[[_totalvo]]
+=== TotalVo
+水电表总数
+
+__类型__ : object
+
+
+[[_view]]
+=== View
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**contentType** +
+__可选__|**样例** : `"string"`|string
+|===
+
+
+[[_watermetervo]]
+=== WaterMeterVo
+水表设备详情
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**deviceSn** +
+__可选__|设备编号 +
+**样例** : `"设备编号"`|string
+|**isMaster** +
+__可选__|是否主表 0 不是 1 是 +
+**样例** : `"是否主表 0 不是 1 是"`|integer (int32)
+|===
+
+
+[[_5393caa7c0770900981b2789aa5a9401]]
+=== 成功的请求«DistribubtionBoxLiveDataVo»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|请求的状态码 +
+**样例** : `"string"`|string
+|**data** +
+__可选__|请求返回的内容 +
+**样例** : `"<<_distribubtionboxlivedatavo>>"`|<<_distribubtionboxlivedatavo,DistribubtionBoxLiveDataVo>>
+|**message** +
+__可选__|请求的结果信息 +
+**样例** : `"string"`|string
+|**success** +
+__可选__|请求是否成功 +
+**样例** : `false`|boolean
+|===
+
+
+[[_57fc5f880acaf86aded19a3995460811]]
+=== 成功的请求«DistributionBoxVo»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|请求的状态码 +
+**样例** : `"string"`|string
+|**data** +
+__可选__|请求返回的内容 +
+**样例** : `"<<_distributionboxvo>>"`|<<_distributionboxvo,DistributionBoxVo>>
+|**message** +
+__可选__|请求的结果信息 +
+**样例** : `"string"`|string
+|**success** +
+__可选__|请求是否成功 +
+**样例** : `false`|boolean
+|===
+
+
+[[_bf70c63a910233624740972866ccb212]]
+=== 成功的请求«ElectricityMeterVo»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|请求的状态码 +
+**样例** : `"string"`|string
+|**data** +
+__可选__|请求返回的内容 +
+**样例** : `"<<_electricitymetervo>>"`|<<_electricitymetervo,ElectricityMeterVo>>
+|**message** +
+__可选__|请求的结果信息 +
+**样例** : `"string"`|string
+|**success** +
+__可选__|请求是否成功 +
+**样例** : `false`|boolean
+|===
+
+
+[[_85fb44bd97ce4a50be54d7b740008c2a]]
+=== 成功的请求«List«DistribubtionBoxLiveDataVo»»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|请求的状态码 +
+**样例** : `"string"`|string
+|**data** +
+__可选__|请求返回的内容 +
+**样例** : `[ "<<_distribubtionboxlivedatavo>>" ]`|< <<_distribubtionboxlivedatavo,DistribubtionBoxLiveDataVo>> > array
+|**message** +
+__可选__|请求的结果信息 +
+**样例** : `"string"`|string
+|**success** +
+__可选__|请求是否成功 +
+**样例** : `false`|boolean
+|===
+
+
+[[_7d91ae93ebb3dce27c53525da6989556]]
+=== 成功的请求«List«ElectricityMeterVo»»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|请求的状态码 +
+**样例** : `"string"`|string
+|**data** +
+__可选__|请求返回的内容 +
+**样例** : `[ "<<_electricitymetervo>>" ]`|< <<_electricitymetervo,ElectricityMeterVo>> > array
+|**message** +
+__可选__|请求的结果信息 +
+**样例** : `"string"`|string
+|**success** +
+__可选__|请求是否成功 +
+**样例** : `false`|boolean
+|===
+
+
+[[_9ead19bd910f3f5fd960537bc1dfb7f9]]
+=== 成功的请求«List«WaterMeterVo»»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|请求的状态码 +
+**样例** : `"string"`|string
+|**data** +
+__可选__|请求返回的内容 +
+**样例** : `[ "<<_watermetervo>>" ]`|< <<_watermetervo,WaterMeterVo>> > array
+|**message** +
+__可选__|请求的结果信息 +
+**样例** : `"string"`|string
+|**success** +
+__可选__|请求是否成功 +
+**样例** : `false`|boolean
+|===
+
+
+[[_1e34d2cd3afe5389a39b36350ac0e4fc]]
+=== 成功的请求«StatisticsContainMoreTotalVoByTime»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|请求的状态码 +
+**样例** : `"string"`|string
+|**data** +
+__可选__|请求返回的内容 +
+**样例** : `"<<_statisticscontainmoretotalvobytime>>"`|<<_statisticscontainmoretotalvobytime,StatisticsContainMoreTotalVoByTime>>
+|**message** +
+__可选__|请求的结果信息 +
+**样例** : `"string"`|string
+|**success** +
+__可选__|请求是否成功 +
+**样例** : `false`|boolean
+|===
+
+
+[[_b97fd187312ee6ef696588041f9eaa05]]
+=== 成功的请求«StatisticsContainMoreVoByDevice»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|请求的状态码 +
+**样例** : `"string"`|string
+|**data** +
+__可选__|请求返回的内容 +
+**样例** : `"<<_statisticscontainmorevobydevice>>"`|<<_statisticscontainmorevobydevice,StatisticsContainMoreVoByDevice>>
+|**message** +
+__可选__|请求的结果信息 +
+**样例** : `"string"`|string
+|**success** +
+__可选__|请求是否成功 +
+**样例** : `false`|boolean
+|===
+
+
+[[_2419bf6afce1de2bc6c728efce2b82e2]]
+=== 成功的请求«TotalVo»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|请求的状态码 +
+**样例** : `"string"`|string
+|**data** +
+__可选__|请求返回的内容 +
+**样例** : `"<<_totalvo>>"`|<<_totalvo,TotalVo>>
+|**message** +
+__可选__|请求的结果信息 +
+**样例** : `"string"`|string
+|**success** +
+__可选__|请求是否成功 +
+**样例** : `false`|boolean
+|===
+
+
+[[_afd85b02958eb52666a2166cdb7eed5b]]
+=== 成功的请求«WaterMeterVo»
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|名称|说明|类型
+|**code** +
+__可选__|请求的状态码 +
+**样例** : `"string"`|string
+|**data** +
+__可选__|请求返回的内容 +
+**样例** : `"<<_watermetervo>>"`|<<_watermetervo,WaterMeterVo>>
+|**message** +
+__可选__|请求的结果信息 +
+**样例** : `"string"`|string
+|**success** +
+__可选__|请求是否成功 +
+**样例** : `false`|boolean
+|===
+
+
+
